@@ -39,5 +39,6 @@ Steps to configure this Github project in Jenkins
 	- Run the Pipeline Job.
 
 Steps to run the docker image 
-	- Use this command to run the docker image 
-		docker container run -d -it -p 8080:8080 sowmyamaruthi.jfrog.io/default-docker-virtual/spring-petclinic:0.1
+	- Use this command to run the docker image
+	
+	docker container run -d -it -p 8080:8080 sowmyamaruthi.jfrog.io/default-docker-virtual/spring-petclinic:0.1
