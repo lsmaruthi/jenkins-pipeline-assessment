@@ -71,7 +71,8 @@ pipeline {
 					try {
 						dir("$WORKSPACE/code") {						
 							retry(5) {
-								git credentialsId: 'GITHUB_SSH_CREDENTIALS', url: repo_url, branch: branch_name
+								//git credentialsId: 'GITHUB_SSH_CREDENTIALS', url: repo_url, branch: branch_name
+								git url: repo_url, branch: branch_name
 							}							
 						}
 					} catch (Exception ex) {
@@ -142,22 +143,6 @@ pipeline {
         }
 		****/
 		
-		stage('Build Docker Image') {
-            steps {
-                script {
-					try {
-						dir("$WORKSPACE/scripts") {
-							sh "cp $WORKSPACE/code/target/${app_name}*.jar ."
-							sh "docker build --build-arg APP_NAME=${app_name} -t ${app_docker_image} ."
-						}
-					} catch (Exception ex) {
-						println("exception in docker build stage")
-						println("Exception: ${ex}")
-					}					
-				}
-            }
-        }
-		
 		stage('Artifactory Login') {
 			steps {
 				script {
@@ -175,6 +160,23 @@ pipeline {
 			}
 		
 		}
+		
+		stage('Build Docker Image') {
+            steps {
+                script {
+					try {
+						dir("$WORKSPACE/scripts") {
+							sh "cp $WORKSPACE/code/target/${app_name}*.jar ."
+							sh "docker build --build-arg APP_NAME=${app_name} -t ${app_docker_image} ."
+						}
+					} catch (Exception ex) {
+						println("exception in docker build stage")
+						println("Exception: ${ex}")
+					}					
+				}
+            }
+        }		
+		
 		
 		stage('Publish to Artifactory') {
             steps {
