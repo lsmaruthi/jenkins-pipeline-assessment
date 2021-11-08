@@ -71,8 +71,7 @@ pipeline {
 					try {
 						dir("$WORKSPACE/code") {						
 							retry(5) {
-								//git credentialsId: 'GITHUB_SSH_CREDENTIALS', url: repo_url, branch: branch_name
-								git url: repo_url, branch: branch_name
+								git credentialsId: 'GITHUB_SSH_CREDENTIALS', url: repo_url, branch: branch_name
 							}							
 						}
 					} catch (Exception ex) {
