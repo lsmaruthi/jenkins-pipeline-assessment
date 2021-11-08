@@ -11,11 +11,13 @@ This project contains source code for a sample jenkins pipeline that does below
 8) Perform clean up tasks like remove generated docker image from slave node and logout from artifactory.
 
 Source Code 
-	- Jenkinsfile
-	- Dockerfile
+
+- Jenkinsfile
+- Dockerfile
 	
 
 Steps to configure this Github project in Jenkins 
+	
 	Pre-requisites:
 	- Jenkins is running and had all the default recommended plugins installed.
 	- Jdk 1.8 is installed 
