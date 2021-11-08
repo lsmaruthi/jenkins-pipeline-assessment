@@ -11,11 +11,13 @@ This project contains source code for a sample jenkins pipeline that does below
 8) Perform clean up tasks like remove generated docker image from slave node and logout from artifactory.
 
 Source Code 
-	- Jenkinsfile
-	- Dockerfile
+
+- Jenkinsfile
+- Dockerfile
 	
 
 Steps to configure this Github project in Jenkins 
+	
 	Pre-requisites:
 	- Jenkins is running and had all the default recommended plugins installed.
 	- Jdk 1.8 is installed 
@@ -39,5 +41,6 @@ Steps to configure this Github project in Jenkins
 	- Run the Pipeline Job.
 
 Steps to run the docker image 
-	- Use this command to run the docker image 
-		docker container run -d -it -p 8080:8080 sowmyamaruthi.jfrog.io/default-docker-virtual/spring-petclinic:0.1
+	- Use this command to run the docker image
+	
+	docker container run -d -it -p 8080:8080 sowmyamaruthi.jfrog.io/default-docker-virtual/spring-petclinic:0.1
