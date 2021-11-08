@@ -44,3 +44,8 @@ Steps to run the docker image
 	- Use this command to run the docker image
 	
 	docker container run -d -it -p 8080:8080 sowmyamaruthi.jfrog.io/default-docker-virtual/spring-petclinic:0.1
+	
+	
+	
+
+![Flow](https://user-images.githubusercontent.com/13734706/140831885-a2ce7abc-0b18-411b-b16e-e9d6cc118010.PNG)
